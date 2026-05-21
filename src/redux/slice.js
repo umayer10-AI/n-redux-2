@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, nanoid } from "@reduxjs/toolkit";
 
 const counterSlice = createSlice({
     name: "counter",
@@ -13,8 +13,12 @@ const counterSlice = createSlice({
         decrement: (v) => {
             v.value -= 1
         },
-        addUser: (v,acttion) => {
-            
+        addUser: (v,action) => {
+            const data = {
+                id: nanoid(),
+                name: action.payload
+            }
+            v.users.push(data)
         }
     }
 })
