@@ -1,5 +1,5 @@
 "use client"
-import { addUser } from '@/redux/slice';
+import { addUser, removeUser } from '@/redux/slice';
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -22,7 +22,7 @@ const Display = () => {
             <div>
                 {
                     data?.map((v,i) => (
-                        <h2 key={i}><span>{v.name}</span> <span onClick={()} className='py-1 px-2 bg-red-500 rounded-2xl ml-3'>remove</span></h2>
+                        <h2 key={i}><span>{v.name}</span> <span onClick={() => dispatch(removeUser(v.id))} className='py-1 px-2 bg-red-500 rounded-2xl ml-3'>remove</span></h2>
                     ))
                 }
             </div>
