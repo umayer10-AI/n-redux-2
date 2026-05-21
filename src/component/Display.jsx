@@ -12,6 +12,7 @@ const Display = () => {
     const a = () => {
         dispatch(addUser(s))
     }
+    
 
     return (
         <div className='ml-5 mt-5'>
