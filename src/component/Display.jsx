@@ -1,15 +1,16 @@
 "use client"
+import { addUser } from '@/redux/slice';
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 const Display = () => {
 
     const [s,setT] = useState('')
-    const cnt = useSelector(v => v.counter.users)
+    const data = useSelector(v => v.counter.users)
     const dispatch = useDispatch()
 
     const a = () => {
-        
+        dispatch(addUser(s))
     }
 
     return (
@@ -19,7 +20,11 @@ const Display = () => {
             <button onClick={a} className='py-1 px-3 bg-cyan-700 rounded-2xl m-4'>Add</button>
             <h2 className='mt-10'>User Data:</h2>
             <div>
-
+                {
+                    data?.map((v,i) => (
+                        <h2 key={i}>{v.name}</h2>
+                    ))
+                }
             </div>
         </div>
     );
