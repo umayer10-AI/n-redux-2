@@ -19,6 +19,7 @@ const counterSlice = createSlice({
                 name: action.payload
             }
             v.users.push(data)
+            
         },
         removeUser: (v,action) => {
             const data = v.users.filter(v => v.id !== action.payload)
