@@ -22,7 +22,7 @@ const Display = () => {
             <div>
                 {
                     data?.map((v,i) => (
-                        <h2 key={i}><span>{v.name}</span> <span className='py-1 px-2 bg-red-500'>remove</span></h2>
+                        <h2 key={i}><span>{v.name}</span> <span onClick={()} className='py-1 px-2 bg-red-500 rounded-2xl ml-3'>remove</span></h2>
                     ))
                 }
             </div>

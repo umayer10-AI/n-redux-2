@@ -19,6 +19,9 @@ const counterSlice = createSlice({
                 name: action.payload
             }
             v.users.push(data)
+        },
+        removeUser: (v,action) => {
+            console.log(action)
         }
     }
 })
